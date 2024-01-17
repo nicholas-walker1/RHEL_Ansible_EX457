@@ -1,24 +1,6 @@
 [all]
-r1
-r2
-r3
-r4
+sandbox-iosxe-latest-1.cisco.com
 
-[north]
-r1
-r2
+[cisco]
+sandbox-iosxe-latest-1.cisco.com
 
-[east]
-r2
-r4
-
-[south]
-r3
-r4
-
-[west]
-r1
-r3
-
-[juniper]
-r4
