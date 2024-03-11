@@ -1,0 +1,34 @@
+---
+- name: "BANNER PLAYBOOK"
+  hosts: cisco
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "CONFIGURE MOTD BANNER"
+      cisco.ios.ios_banner:
+        banner: motd
+        text: |
+          **************************************************************************
+          *                                                                        *
+          *                       AUTHORIZED PERSONNEL ONLY                        *
+          *                       NICK's               LAB                         *
+          *                       AUTHORIZED PERSONNEL ONLY                        *
+          *                                                                        *
+          **************************************************************************
+        state: present
+
+      register: motd_banner
+
+    - name: "REMOVE THE LOGIN BANNER"
+      cisco.ios.ios_banner:
+        banner: login
+        state: absent
+
+      register: login_banner
+
+    - name: "DEBUG MESSAGES"
+      debug: 
+        var: 
+          - motd_banner
+          - login_banner

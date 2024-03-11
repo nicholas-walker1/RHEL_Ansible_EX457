@@ -1,0 +1,7 @@
+---
+
+username: john
+data:
+  bgp: 65001
+  ospf_neighbors: [2.2.2.2, 3.3.3.3]
+  
