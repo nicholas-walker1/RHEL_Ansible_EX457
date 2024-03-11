@@ -37,6 +37,8 @@
           *                       AUTHORIZED PERSONNEL ONLY                        *
           *                                                                        *
           **************************************************************************
+
+          Device: {{ inventory_hostname }}
         state: present
 
       register: motd_banner
