@@ -1,0 +1,12 @@
+---
+- name: "LOOP TEST FOR DISPLAY INFO"
+  hosts: usa
+  gather_facts: true
+  connection: network_cli
+
+  tasks:
+    - name: "DISPLAY IOS CONFIG"
+      debug: 
+        msg: "Hostname: {{ inventory_hostname }} IOS Version: {{ item }}"
+      loop: 
+        - "{{ ansible_net_image }}"
