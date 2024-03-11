@@ -4,24 +4,15 @@ vios-2
 vios-3
 managment-swtich
 
-[north]
-vios-1
-
-[east]
-viso-2
-
-[south]
-vios-3
-
-[west]
-managment-swtich
-
-[cisco]
+# locations
+[usa]
 vios-1
 vios-2
-vios-3
-managment-swtich
 
+[uk]
+vios-3
+
+# device types
 [routers]
 vios-1
 vios-2
@@ -30,9 +21,9 @@ vios-3
 [switches]
 managment-swtich
 
-[usa]
+# for group var logon info
+[cisco]
+vios-1
 vios-2
 vios-3
-
-[uk]
-vios-1
+managment-swtich

@@ -1,6 +1,6 @@
 ---
 - name: "BANNER PLAYBOOK"
-  hosts: cisco
+  hosts: all
   gather_facts: false
   connection: network_cli
 
