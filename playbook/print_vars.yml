@@ -1,9 +1,9 @@
 ---
 - name: "PRINTING SOME VAR INFO"
-  hosts: uk
+  hosts: all
   gather_facts: no
 
   tasks:
     - name: "PARS VAR STUFF"
       debug:
-        msg: "This device has an OSPF RID of {{ hostvars[ansible_host]['ospf']['rid'] }}."
+        msg: "{{ hostvars[ansible_host] }}"
