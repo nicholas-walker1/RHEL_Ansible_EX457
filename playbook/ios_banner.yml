@@ -5,6 +5,27 @@
   connection: network_cli
 
   tasks:
+    - name: "REMOVE THE EXEC BANNER"
+      cisco.ios.ios_banner:
+        banner: exec
+        state: absent
+
+      register: exec_banner
+
+    - name: "REMOVE THE INCOMING BANNER"
+      cisco.ios.ios_banner:
+        banner: incoming
+        state: absent
+
+      register: incoming_banner
+
+    - name: "REMOVE THE LOGIN BANNER"
+      cisco.ios.ios_banner:
+        banner: login
+        state: absent
+
+      register: login_banner
+
     - name: "CONFIGURE MOTD BANNER"
       cisco.ios.ios_banner:
         banner: motd
@@ -20,15 +41,11 @@
 
       register: motd_banner
 
-    - name: "REMOVE THE LOGIN BANNER"
-      cisco.ios.ios_banner:
-        banner: login
-        state: absent
-
-      register: login_banner
-
     - name: "DEBUG MESSAGES"
       debug: 
         var: 
-          - motd_banner
+          - exec_banner
+          - incoming_banner
           - login_banner
+          - motd_banner
+          
