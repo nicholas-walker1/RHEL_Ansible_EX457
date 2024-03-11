@@ -1,0 +1,20 @@
+---
+- name: "NTP PLAYBOOK"
+  hosts: usa
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "LOOP THROUGH NPT SERVERS AND CONFIGURE"
+      vars:
+        myservers:
+          - "1.1.1.1"
+          - "2.2.2.2"
+          - "3.3.3.3"
+          - "4.4.4.4"
+      cisco.ios.ios_ntp_global:
+        config:
+          peers:
+            - peer: "{{ item }}"
+              version: 2
+      loop: "{{ myservers }}"
